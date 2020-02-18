@@ -10,7 +10,11 @@
       <h4> {{list.description}} </h4>
     </p>
 
-<button id = "update-list">Update your list!</button>
+{{!-- <button data-toggle="modal" data-target="#list-delete-modal"
+    data-id={{list.id}} class="btn btn-danger btn-sm delete-list">Delete</button> --}}
+
+<button data-toggle="modal" data-target="#update-item-modal" data-id={{list.id}} id ="update-item">Update</button>
+<button data-id={{list.id}} id ="delete-item">Delete</button>
   </section>
 {{/each}}
 
