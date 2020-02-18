@@ -16,26 +16,39 @@
 <body>
   <h1>Bucket List</h1>
 
-  <div>
-    
-      <form class="input-group" id="sign-up">
-        <fieldset>
-          <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
-          <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
-          <input class="credentials" name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
-          <input type="submit" class="btn" value="Sign Up">
-        </fieldset>
-      </form>
+  <div class="signed-out">
+    <!-- Signed out -->
+    <form class="input-group" id="sign-up">
+      <fieldset>
+        <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
+        <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
+        <input class="credentials" name="credentials[password_confirmation]" type="password"
+          placeholder="confirm password" required>
+        <input type="submit" class="btn" value="Sign Up">
+      </fieldset>
+    </form>
 
-      <form class="input-group" id="sign-in">
-        <fieldset>
-          <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
-          <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
-          <input type="submit" class="btn" value="Sign In">
-        </fieldset>
-      </form>
+    <form class="input-group" id="sign-in">
+      <fieldset>
+        <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
+        <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
+        <input type="submit" class="btn" value="Sign In">
+      </fieldset>
+    </form>
 
-    </div>
+  </div>
+
+  <!-- signed in -->
+  <div class="signed-in">
+    <form class="input-group" id="change-pw">
+      <fieldset>
+        <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
+        <input class="credentials" name="passwords[new]" type="text" placeholder="new password" required>
+        <input type="submit" class="btn" value="Change Password">
+      </fieldset>
+    </form>
+    <button id="sign-out">Sign Out</button>
+  </div>
 
 </body>
 
