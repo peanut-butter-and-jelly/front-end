@@ -11,10 +11,16 @@ const onCreateListItem = (event) => {
     .catch(ui.createListItemFailed)
 }
 
+const onGetList = () => {
+  api.getListItems()
+    .then(ui.getListSuccessful) // fill in html
+    .catch(ui.getListFailed)
+}
 const addEventHandlers = () => {
   $('#create-list').on('submit', onCreateListItem)
 }
 
 module.exports = {
-  addEventHandlers
+  addEventHandlers,
+  onGetList
 }
