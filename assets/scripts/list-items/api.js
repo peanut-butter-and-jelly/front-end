@@ -12,6 +12,17 @@ const createListItem = function (data) {
   })
 }
 
+const getListItems = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/lists',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createListItem
+  createListItem,
+  getListItems
 }

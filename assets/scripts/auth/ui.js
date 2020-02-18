@@ -1,9 +1,11 @@
 const store = require('./../store')
+const listEvents = require('./../list-items/events')
 
 const signInSuccessful = function (response) {
   store.user = response.user
   $('.signed-out').hide()
   $('.signed-in').show()
+  listEvents.onGetList()
   console.log('Successfully signed in')
 }
 
