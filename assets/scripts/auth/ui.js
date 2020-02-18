@@ -2,6 +2,8 @@ const store = require('./../store')
 
 const signInSuccessful = function (response) {
   store.user = response.user
+  $('.signed-out').hide()
+  $('.signed-in').show()
   console.log('Successfully signed in')
 }
 
@@ -18,6 +20,9 @@ const signUpFailed = function () {
 }
 
 const signOutSuccessful = function () {
+  store.user = null
+  $('.signed-out').show()
+  $('.signed-in').hide()
   console.log('Sign out successful')
 }
 

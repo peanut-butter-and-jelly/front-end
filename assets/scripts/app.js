@@ -10,4 +10,6 @@ const authEvents = require('./auth/events.js')
 
 $(() => {
   authEvents.addEventHandlers()
+  $('.signed-out').show()
+  $('.signed-in').hide()
 })
