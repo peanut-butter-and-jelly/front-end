@@ -48,6 +48,16 @@ const onDeleteListItem = function (event) {
     .then(onGetList)
     .catch(ui.deleteListItemFailed)
 }
+// needed because the event is within a modal which doesn't hold the id
+const onGetItemId = (event) => {
+   // make an api call to show this item,
+  // use the response data to populate the values on the modal
+  tempId = $(event.target).data('id')
+  api.getListItem(tempId)
+  .then(console.log)
+  // .then(() => $('#update-item-modal').modal('id'))
+  // .catch(console.error)
+}
 
 // if a user clicks the checkbox, make an api call to toggle its completed state,
 // if successful, get the updated list which will now show it with different styling

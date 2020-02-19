@@ -23,6 +23,15 @@ const getListItems = function () {
     }
   })
 }
+const getListItem = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/lists/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 const updateListItem = (id, data) => {
   return $.ajax({
@@ -49,5 +58,6 @@ module.exports = {
   createListItem,
   getListItems,
   updateListItem,
-  deleteListItem
+  deleteListItem,
+  getListItem
 }
