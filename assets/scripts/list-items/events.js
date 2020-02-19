@@ -25,8 +25,9 @@ const onUpdateListItem = (event) => {
   const data = getFormFields(form)
   api.updateListItem(tempId, data)
     .then(onGetList)
+    .then(() => $('#update-item-modal').modal('toggle'))
     .catch(ui.updateListItemFailed)
-    // .finally(console.log)
+  //.finally(console.log)
 }
 
 const onDeleteListItem = function (event) {
