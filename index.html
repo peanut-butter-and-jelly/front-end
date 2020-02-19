@@ -15,10 +15,46 @@
 
 <body>
   <div class="container">
+    <!-- Signed in nav-->
+    <nav class="signed-in">
+
+      <h3>What's on your bucket list?</h3>
+    
+      <!-- update pw modal -->
+    <div class="modal fade" id="change-password-modal" tabindex="-1">
+          <div class="modal-dialog" role="dialog" aria-labelledby="delete-list-modal" aria-hidden="true">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="title" id="change-password-modal-label">Change Password</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div>
+                <form class="input-group" id="change-pw">
+                  <fieldset>
+                  <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
+                  <input class="credentials" name="passwords[new]" type="text" placeholder="new password" required>
+                  <input type="submit" class="btn" value="Change Password">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- end update pw modal -->
+        <button id="password-modal-button" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+        <button id="sign-out">Sign Out</button>
+    </nav>
+
+    <!-- end signed in nav-->
+
     <h1>Bucket List</h1>
-    <h3>What's on your bucket list?</h3>
+    
     <!-- Signed out -->
     <div class="signed-out">
+
       <form class="input-group" id="sign-up">
         <fieldset>
           <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
@@ -39,18 +75,10 @@
 
     </div>
 
-    <!-- Signed in -->
-    <div class="signed-in">
-      <form class="input-group" id="change-pw">
-        <fieldset>
-          <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
-          <input class="credentials" name="passwords[new]" type="text" placeholder="new password" required>
-          <input type="submit" class="btn" value="Change Password">
-        </fieldset>
-      </form>
-      <button id="sign-out">Sign Out</button>
+    <!-- Signed in body -->
 
       <!-- Create list-items -->
+      <div class="signed-in">
       <form class="input-group" id="create-list">
         <fieldset>
           <input name="list[title]" type="text" placeholder="Skydiving..." required>
@@ -60,7 +88,8 @@
       </form>
       <div id="bucket-list"></div>
     </div>
-    <!-- end signed in -->
+  
+    <!-- end signed in body-->
 
     <!-- Update list-item modal -->
     <div class="modal fade" id="update-item-modal" tabindex="-1">
@@ -98,31 +127,6 @@
       </div>
     </div>
     <!-- end toast -->
-
-    <!-- update pw modal -->
-    <!-- <div class="modal fade" id="update-item-modal" tabindex="-1">
-          <div class="modal-dialog" role="dialog" aria-labelledby="delete-list-modal" aria-hidden="true">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="title" id="change-password-modal-label">Change Password</h4>
-                <button type="button" class="close" data-dismiss="modal">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <div>
-                <form class="col-12 mb-2 change-password" id="change-password-forms">
-                  <fieldset>
-                    <input class="passwords" name="passwords[old]" type="password" placeholder="old password" required>
-                    <input class="passwords" name="passwords[new]" type="password" placeholder="new password" required>
-                    <input class="btn btn-outline-light" type="submit" id="change-password-modal-button" value="Change Password">
-                  </fieldset>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
 
 </body>
