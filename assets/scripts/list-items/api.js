@@ -22,9 +22,9 @@ const getListItems = function () {
   })
 }
 
-const updateListItem = (tempId, data) => {
+const updateListItem = (id, data) => {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + tempId,
+    url: config.apiUrl + '/lists/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

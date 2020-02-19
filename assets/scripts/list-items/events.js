@@ -37,9 +37,21 @@ const onDeleteListItem = function (event) {
     .then(onGetList)
     .catch(ui.deleteListItemFailed)
 }
-
-const getItemId = (event) => {
+// needed because the event is within a modal which doesn't hold the id
+const onGetItemId = (event) => {
   tempId = $(event.target).data('id')
+}
+
+const onToggleCompleted = (event) => {
+  const id = $(event.target).data('id')
+  const data = {
+    list: {
+      completed: event.target.checked
+    }
+  }
+  api.updateListItem(id, data)
+    .then(console.log)
+    .catch(console.error)
 }
 
 const addEventHandlers = () => {
@@ -47,7 +59,8 @@ const addEventHandlers = () => {
   $('#update-item-form').on('submit', onUpdateListItem)
   $('#bucket-list').on('click', '.delete-item-button', onDeleteListItem)
   // get the ID of the list item and store it for use with onUpdateListItem
-  $('#bucket-list').on('click', '.update-item-button', getItemId)
+  $('#bucket-list').on('click', '.update-item-button', onGetItemId)
+  $('#bucket-list').on('click', '.checkbox', onToggleCompleted)
   // when modal is closed, clear the form
   $('#update-item-modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
 }

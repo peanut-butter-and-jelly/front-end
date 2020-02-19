@@ -1,15 +1,14 @@
 {{#each lists as |list|}}
-{{!-- {{log list}} --}}
+{{log list}}
 <section data-id={{list._id}}>
 
-  <p> Title
-    <h4> {{list.title}} </h4>
-  </p>
-  <p> Description
-    <h4> {{list.description}} </h4>
-  </p>
 
-
+  <p> Element
+    {{!-- we need to make the checkbox start checked or unchecked baseed on the elements state --}}
+    <input class ="checkbox" data-id={{list._id}} type="checkbox"> <h4> {{list.title}} </h4> <h6> {{list.description}} </h6>
+  </p>
+ 
+    
   <button data-toggle="modal" data-target="#update-item-modal" data-id={{list._id}}
     class="update-item-button">Update</button>
   <button data-id={{list._id}} class="delete-item-button">Delete</button>
