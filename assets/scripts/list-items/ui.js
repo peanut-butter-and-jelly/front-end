@@ -18,10 +18,20 @@ const getListSuccessful = function (response) {
 const getListFailed = function () {
   console.log('Did not get')
 }
+const updateListItemFailed = function (error) {
+  console.error(error)
+}
+
+const deleteListItemFailed = function (error) {
+  console.error(error)
+}
+
 
 module.exports = {
   createListItemSuccessful,
   createListItemFailed,
   getListSuccessful,
-  getListFailed
+  getListFailed,
+  deleteListItemFailed,
+  updateListItemFailed
 }

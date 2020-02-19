@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Bucket List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <div class= "container">
   <h1>Bucket List</h1>
   <h3>What's on your bucket list?</h3>
   <!-- Signed out -->
@@ -60,6 +61,55 @@
     <div id ="bucket-list"></div>
   </div>
   <!-- end signed in -->
+
+<!-- Update list-item modal -->
+<div class="modal fade" id="update-item-modal" tabindex="-1">
+  <div class="modal-dialog" role="dialog" aria-labelledby="update-item-modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="title">Update Item</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div>
+        <form class="col-12 mb-2 " id="update-item-form">
+          <fieldset>
+            <input name="list[title]" type="text" placeholder="new title" required>
+            <input name="list[description]" type="text" placeholder="new description" required>
+            <input class="btn btn-primary" type="submit" id="update-item-btn" value="Update Item">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      
+<!-- update pw modal -->
+        <!-- <div class="modal fade" id="update-item-modal" tabindex="-1">
+          <div class="modal-dialog" role="dialog" aria-labelledby="delete-list-modal" aria-hidden="true">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="title" id="change-password-modal-label">Change Password</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div>
+                <form class="col-12 mb-2 change-password" id="change-password-forms">
+                  <fieldset>
+                    <input class="passwords" name="passwords[old]" type="password" placeholder="old password" required>
+                    <input class="passwords" name="passwords[new]" type="password" placeholder="new password" required>
+                    <input class="btn btn-outline-light" type="submit" id="change-password-modal-button" value="Change Password">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
 
 </body>
 
