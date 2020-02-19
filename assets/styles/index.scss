@@ -1,4 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+body {
+  background-image: url('../../public/bucket-list.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
 .completed{
   text-decoration: line-through;
 }
