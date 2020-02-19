@@ -6,11 +6,10 @@ const signInSuccessful = function (response) {
   $('.signed-out').hide()
   $('.signed-in').show()
   listEvents.onGetList()
-  console.log('Successfully signed in')
 }
 
 const signInFailed = function () {
-  console.log('Failed to sign in')
+  console.log('Failed to sign in') // TODO: add user message
 }
 
 const signUpSuccessful = function () {

@@ -6,11 +6,10 @@ const createListItemSuccessful = function (response) {
 }
 
 const createListItemFailed = function () {
-  console.log('Did not create')
+  console.log('failed to create item')
 }
 
 const getListSuccessful = function (response) {
-  console.log(response)
   const listHTML = listItemsTemplate({ lists: response.lists })
   $('#bucket-list').html(listHTML)
 }
@@ -20,6 +19,7 @@ const getListFailed = function () {
 }
 const updateListItemFailed = function (error) {
   console.error(error)
+
 }
 
 const deleteListItemFailed = function (error) {
