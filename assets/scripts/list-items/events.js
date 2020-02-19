@@ -50,7 +50,7 @@ const onToggleCompleted = (event) => {
     }
   }
   api.updateListItem(id, data)
-    .then(console.log)
+    .then(onGetList)
     .catch(console.error)
 }
 
