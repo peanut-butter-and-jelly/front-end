@@ -8,7 +8,7 @@ const onCreateListItem = (event) => {
   const form = event.target
   const data = getFormFields(form)
   api.createListItem(data)
-    .then(ui.createListItemSuccessful)
+    .then(ui.createListItemSuccessful) // do not need this
     .then(onGetList)
     .catch(ui.createListItemFailed)
 }
@@ -27,7 +27,7 @@ const onUpdateListItem = (event) => {
     .then(onGetList)
     .then(() => $('#update-item-modal').modal('toggle'))
     .catch(ui.updateListItemFailed)
-  //.finally(console.log)
+    .always(() => tempId = null)
 }
 
 const onDeleteListItem = function (event) {
@@ -40,7 +40,6 @@ const onDeleteListItem = function (event) {
 
 const getItemId = (event) => {
   tempId = $(event.target).data('id')
-  console.log('HERE IS THE ID' + tempId)
 }
 
 const addEventHandlers = () => {
@@ -49,6 +48,8 @@ const addEventHandlers = () => {
   $('#bucket-list').on('click', '.delete-item-button', onDeleteListItem)
   // get the ID of the list item and store it for use with onUpdateListItem
   $('#bucket-list').on('click', '.update-item-button', getItemId)
+  // when modal is closed, clear the form
+  $('#update-item-modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
 }
 
 module.exports = {
