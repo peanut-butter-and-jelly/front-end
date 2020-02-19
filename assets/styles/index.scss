@@ -9,3 +9,15 @@ body {
 .completed{
   text-decoration: line-through;
 }
+
+nav {
+  display: inline;
+
+  h3 {
+    float: left;
+  }
+
+  .change-pw, .sign-out {
+    float: right;
+  }
+}
