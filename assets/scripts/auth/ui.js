@@ -1,5 +1,6 @@
 const store = require('./../store')
 const listEvents = require('./../list-items/events')
+const showToast = require('../../../lib/show-toast')
 
 const signInSuccessful = function (response) {
   store.user = response.user
@@ -9,33 +10,44 @@ const signInSuccessful = function (response) {
 }
 
 const signInFailed = function () {
-  console.log('Failed to sign in') // TODO: add user message
+  const header = "Error!"
+  const msg = "Email was invalid or password was incorrect"
+  showToast(msg, header)
 }
 
 const signUpSuccessful = function () {
-  console.log('Sign up successful')
+  const msg = "Successfully created an account and signed in"
+  showToast(msg, "Success!")
 }
 
-const signUpFailed = function () {
-  console.log('Failed to sign up')
+const signUpFailed = function (error) {
+  const header = "Error!"
+  showToast(error.responseJSON.message, header)
 }
 
 const signOutSuccessful = function () {
   store.user = null
   $('.signed-out').show()
   $('.signed-in').hide()
-  console.log('Sign out successful')
 }
 
 const signOutFailed = function () {
-  console.log('Failed to sign out')
+  const header = "Error!"
+  const msg = 'Failed to sign out, please try again'
+  showToast(msg, header)
 }
 const changePasswordFailed = function () {
-  console.log('failed to change pw')
+  const header = "Error!"
+  const msg = 'Failed to change password, make sure they both match'
+  showToast(msg, header)
 }
 const changePasswordSuccessful = function () {
-  console.log('successfully changed pw')
+  const msg = "Successfully changed password"
+  const header = "Success!"
+  showToast(msg, header)
 }
+
+
 module.exports = {
   signInSuccessful,
   signInFailed,
