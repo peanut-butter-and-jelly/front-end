@@ -1,12 +1,10 @@
-// const store = require('./../store')
+const showToast = require('../../../lib/show-toast')
 const listItemsTemplate = require('./../templates/list-items.handlebars')
 
-const createListItemSuccessful = function (response) {
-  console.log('Item created')
-}
-
 const createListItemFailed = function () {
-  console.log('failed to create item')
+  const header = "Error!"
+  const msg = "Failed to create an item, please try again"
+  showToast(msg, header)
 }
 
 const getListSuccessful = function (response) {
@@ -15,20 +13,24 @@ const getListSuccessful = function (response) {
 }
 
 const getListFailed = function () {
-  console.log('Did not get')
+  const header = "Error!"
+  const msg = "Failed to get your items, please refresh to try again"
+  showToast(msg, header)
 }
 const updateListItemFailed = function (error) {
-  console.error(error)
-
+  const header = "Error!"
+  const msg = "Failed to update your item, please try again"
+  showToast(msg, header)
 }
 
 const deleteListItemFailed = function (error) {
-  console.error(error)
+  const header = "Error!"
+  const msg = "Failed to delete your item, please try again"
+  showToast(msg, header)
 }
 
 
 module.exports = {
-  createListItemSuccessful,
   createListItemFailed,
   getListSuccessful,
   getListFailed,

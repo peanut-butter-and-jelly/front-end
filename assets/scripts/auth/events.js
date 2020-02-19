@@ -10,7 +10,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     // .then means it was successful so we can use the same data to sign in
     .then(() => api.signIn(data))
-    .then(ui.signInSuccessful)
+    .then(ui.signUpSuccessful)
     .catch(ui.signUpFailed)
     .always(() => $('form').trigger('reset'))
 }

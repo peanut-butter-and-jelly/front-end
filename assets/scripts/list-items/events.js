@@ -8,7 +8,6 @@ const onCreateListItem = (event) => {
   const form = event.target
   const data = getFormFields(form)
   api.createListItem(data)
-    .then(ui.createListItemSuccessful) // do not need this
     .then(onGetList)
     .catch(ui.createListItemFailed)
 }
