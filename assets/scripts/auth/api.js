@@ -1,6 +1,8 @@
 const config = require('./../config')
 const store = require('./../store')
 
+// all functions are ajax calls using routes defined in api
+
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
