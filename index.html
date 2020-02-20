@@ -7,6 +7,7 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -27,14 +28,12 @@
   </nav>
   <!-- end signed in nav-->
 
-  <h1>Bucket List</h1>
-
   <!-- Signed in body -->
 
   <div class="signed-in">
     <div class="container col ml-4 scrollbar ">
       <div class="row">
-        <div id="bucket-list" class="col-8"></div>
+        <div id="bucket-list" class="col-11 col-md-8"></div>
       </div>
     </div>
   </div>
@@ -44,7 +43,7 @@
 
   <!-- Signed out -->
   <div class="signed-out">
-
+    <h1>What's on you're bucket list?</h1>
     <form class="input-group" id="sign-up">
       <fieldset>
         <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
