@@ -2,13 +2,15 @@
 
 ## Important Links
 
-- [back-end](https://github.com/peanut-butter-and-jelly/back-end)
-- [front-end](https://github.com/peanut-butter-and-jelly/front-end)
+- [API Repo](https://github.com/peanut-butter-and-jelly/back-end)
+- [Client Repo](https://github.com/peanut-butter-and-jelly/front-end)
+- [Deployed Heroku Link](https://agile-waters-57550.herokuapp.com)
 
 ## Planning Story
+under construction
 
 ## Wireframes
-
+![Updated Wireframe](https://user-images.githubusercontent.com/58189799/74890388-d50bd400-5351-11ea-9ffd-f4a91712ae11.jpg)
 ![Sign In](https://media.git.generalassemb.ly/user/24753/files/30de3c00-5230-11ea-8bf2-247533f6c86c)
 ![Logged In](https://media.git.generalassemb.ly/user/24753/files/33d92c80-5230-11ea-876d-996f01ec6621)
 
@@ -29,8 +31,11 @@
 - As a signed in user, I would like to cross off items to complete them.
 
 ## STRETCH GOALS
+- Create multiple views for the bucket list
+  - All items
+  - Completed items only
+  - Uncompleted items only
 
-WIP
 
 ### Technologies Used
 

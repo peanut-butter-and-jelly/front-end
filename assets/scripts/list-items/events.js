@@ -1,8 +1,11 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+// needed because we use a modal which isn't tied to the handlebars generated 
+// elements to update 
 let tempId
 
+// create a new item and store it in db, if successful get the updated list
 const onCreateListItem = (event) => {
   event.preventDefault()
   const form = event.target
@@ -12,12 +15,19 @@ const onCreateListItem = (event) => {
     .catch(ui.createListItemFailed)
 }
 
+// get all list items owned by user (api knows owner based on token)
 const onGetList = () => {
   api.getListItems()
     .then(ui.getListSuccessful) // fill in html
     .catch(ui.getListFailed)
 }
 
+// needed because the event is within a modal which doesn't hold the id
+const onGetItemId = (event) => {
+  tempId = $(event.target).data('id')
+}
+
+// use the form data of modal to update the list item using the stored ID
 const onUpdateListItem = (event) => {
   event.preventDefault()
   const form = event.target
@@ -29,6 +39,7 @@ const onUpdateListItem = (event) => {
     .always(() => tempId = null)
 }
 
+// delete the list item using the handlebars data-id attr
 const onDeleteListItem = function (event) {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -36,11 +47,9 @@ const onDeleteListItem = function (event) {
     .then(onGetList)
     .catch(ui.deleteListItemFailed)
 }
-// needed because the event is within a modal which doesn't hold the id
-const onGetItemId = (event) => {
-  tempId = $(event.target).data('id')
-}
 
+// if a user clicks the checkbox, make an api call to toggle its completed state,
+// if successful, get the updated list which will now show it with different styling
 const onToggleCompleted = (event) => {
   const id = $(event.target).data('id')
   const data = {
@@ -50,7 +59,7 @@ const onToggleCompleted = (event) => {
   }
   api.updateListItem(id, data)
     .then(onGetList)
-    .catch(console.error)
+    .catch(ui.updateListItemFailed)
 }
 
 const addEventHandlers = () => {

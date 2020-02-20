@@ -1,6 +1,8 @@
 const config = require('./../config')
 const store = require('./../store')
 
+// AJAX calls for list-items to the API
+
 const createListItem = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists',

@@ -1,37 +1,38 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-
+// signs user up, if successful then use same data to trigger sign in
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  // on successful sign up, use the data to then sign in
   api.signUp(data)
-    // .then means it was successful so we can use the same data to sign in
     .then(() => api.signIn(data))
     .then(ui.signUpSuccessful)
     .catch(ui.signUpFailed)
     .always(() => $('form').trigger('reset'))
 }
+
+// signs user in and gets all of their bucket list items
 const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-
   api.signIn(data)
     .then(ui.signInSuccessful)
     .catch(ui.signInFailed)
     .always(() => $('form').trigger('reset'))
 }
 
-const onSignOut = function (event) {
+// just signs user out and sets token to null if successful
+const onSignOut = function () {
   api.signOut()
     .then(ui.signOutSuccessful)
     .catch(ui.signOutFailed)
     .always(() => $('form').trigger('reset'))
 }
 
+// attempts to change password and notifies user of result
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
