@@ -35,10 +35,25 @@ const deleteListItemFailed = function (error) {
   showToast(msg, header)
 }
 
+const onGetItemIdSuccessful = (data) => {
+  const title = data.list.title
+  const description = data.list.description
+  $('#update-title').val(title)
+  $('#update-description').val(description)
+}
+
+const onGetItemIdFailed = () => {
+  const header = "Error!"
+  const msg = "Failed to get bucket list item, please try again"
+  showToast(msg, header)
+}
+
 module.exports = {
   createListItemFailed,
   getListSuccessful,
   getListFailed,
   deleteListItemFailed,
-  updateListItemFailed
+  updateListItemFailed,
+  onGetItemIdSuccessful,
+  onGetItemIdFailed
 }
