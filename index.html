@@ -16,14 +16,15 @@
 
 <body>
   <!-- Signed in nav-->
-  <nav class="signed-in navbar sticky-top p-0 justify-content-between">
+  <nav class="signed-in navbar sticky-top justify-content-between">
     <div>
-      <h3>What's on your bucket list?</h3>
+      <h2>What's on your bucket list?</h2>
     </div>
+
     <div>
-      <button id="password-modal-button" data-toggle="modal" data-target="#change-password-modal">Change
+      <button class="btn btn-light btn-sm" id="password-modal-button" data-toggle="modal" data-target="#change-password-modal">Change
         Password</button>
-      <button id="sign-out">Sign Out</button>
+      <button id="sign-out" class="btn btn-light btn-sm">Sign Out</button>
     </div>
   </nav>
   <!-- end signed in nav-->
@@ -43,25 +44,30 @@
 
   <!-- Signed out -->
   <div class="signed-out">
-    <h1>What's on you're bucket list?</h1>
+    <h1 class="text-center text-md-left ml-md-2">What's on you're bucket list?</h1>
+    <div class="container ml-md-2">
+    <div class="row text-center text-md-left">
     <form class="input-group" id="sign-up">
       <fieldset>
-        <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
-        <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
-        <input class="credentials" name="credentials[password_confirmation]" type="password"
+        <input class="credentials col-8 col-md-3" name="credentials[email]" type="email" placeholder="email" required>
+        <input class="credentials col-8 col-md-3" name="credentials[password]" type="password" placeholder="password" required>
+        <input class="credentials col-8 col-md-3" name="credentials[password_confirmation]" type="password"
           placeholder="confirm password" required>
-        <input type="submit" class="btn" value="Sign Up">
-      </fieldset>
-    </form>
-
-    <form class="input-group" id="sign-in">
-      <fieldset>
-        <input class="credentials" name="credentials[email]" type="email" placeholder="email" required>
-        <input class="credentials" name="credentials[password]" type="password" placeholder="password" required>
-        <input type="submit" class="btn" value="Sign In">
+        <input type="submit" class="btn btn-light btn-sm col-4 col-md-2" value="Sign Up">
       </fieldset>
     </form>
   </div>
+  <div class="row text-center text-md-left">
+    <form class="input-group" id="sign-in">
+      <fieldset>
+        <input class="credentials col-8 col-md-3" name="credentials[email]" type="email" placeholder="email" required>
+        <input class="credentials col-8 col-md-3" name="credentials[password]" type="password" placeholder="password" required>
+        <input type="submit" class="btn btn-light btn-sm col-4 col-md-2" value="Sign In">
+      </fieldset>
+    </form>
+  </div>
+  </div>
+</div>
   <!-- end signed-out  -->
 
   <!-- create-item modal -->
@@ -79,7 +85,7 @@
             <fieldset>
               <input name="list[title]" type="text" placeholder="Skydiving..." required>
               <input name="list[description]" type="text" placeholder="I want to fly!" required>
-              <input type="submit" class="btn" value="Add">
+              <button type="submit" class="btn btn-sm btn-outline-secondary" >Add Item </button>
             </fieldset>
           </form>
         </div>
@@ -94,7 +100,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="title">Update Item</h4>
-          <button type="button" class="close" data-dismiss="modal">
+          <button type="button" class="close " data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -103,7 +109,7 @@
             <fieldset>
               <input name="list[title]" id="update-title" type="text" placeholder="new title" required>
               <input name="list[description]" id="update-description" type="text" placeholder="new description" required>
-              <input class="btn btn-primary" type="submit" id="update-item-btn" value="Update Item">
+              <input class="btn btn-outline-secondary btn-sm" type="submit" id="update-item-btn" value="Update Item">
             </fieldset>
           </form>
         </div>
@@ -145,7 +151,7 @@
             <fieldset>
               <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
               <input class="credentials" name="passwords[new]" type="text" placeholder="new password" required>
-              <input type="submit" class="btn" value="Change Password">
+              <input type="submit" class="btn btn-outline-secondary btn-sm mr-4" value="Submit">
             </fieldset>
           </form>
         </div>

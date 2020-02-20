@@ -28,6 +28,12 @@ body {
   color: rgba(255, 255, 255, 1);
   overflow: scroll;
 
+  @media (max-width: 768px) {
+    max-height: 500px;
+    margin-top: 90px;
+    text-align: center;
+  }
+
   #show-create-modal {
     background-color: transparent;
     border: none;
@@ -40,9 +46,11 @@ body {
   #show-create-modal:hover {
     color: $bright-blue;
  }
+
   .element{
     border-top: 1px solid white;
     padding: 20px;
+
   }
 
  .title {
@@ -68,5 +76,11 @@ body {
 
 .empty {
   min-height: 40px;
+}
+
+nav {
+  height: 70px;
+  padding: 20px;
+  padding-bottom: 70px;
 }
 
