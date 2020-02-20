@@ -13,8 +13,11 @@ const getListSuccessful = function (response) {
   console.log(response.lists.length)
 
   if(response.lists.length === 0){
-    console.log('Welcome, please make your bucket list')
+    $('#message').text('Welcome, please make your bucket list')
+  } else{
+    $('#message').text(' ')
   }
+  
   const listHTML = listItemsTemplate({ lists: response.lists })
   $('#bucket-list').html(listHTML)
 }
