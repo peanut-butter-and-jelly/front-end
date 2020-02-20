@@ -10,16 +10,13 @@ const createListItemFailed = function () {
 
 // use handlebars template to show all list items
 const getListSuccessful = function (response) {
-  console.log(response.lists.length)
-
-  if(response.lists.length === 0){
-    $('#message').text('Welcome, please make your bucket list')
-  } else{
-    $('#message').text(' ')
-  }
-  
   const listHTML = listItemsTemplate({ lists: response.lists })
   $('#bucket-list').html(listHTML)
+  if (response.lists.length === 0) {
+    $('#message').text('Welcome, please make your bucket list!')
+  } else {
+    $('#message').text('Bucket List')
+  }
 }
 
 // shows toast for error handling
@@ -30,14 +27,14 @@ const getListFailed = function () {
 }
 
 // shows toast for error handling
-const updateListItemFailed = function (error) {
+const updateListItemFailed = function () {
   const header = 'Error!'
   const msg = 'Failed to update your item, please try again'
   showToast(msg, header)
 }
 
 // shows toast for error handling
-const deleteListItemFailed = function (error) {
+const deleteListItemFailed = function () {
   const header = 'Error!'
   const msg = 'Failed to delete your item, please try again'
   showToast(msg, header)
