@@ -15,7 +15,7 @@
 
 <body>
   <!-- Signed in nav-->
-  <nav class="signed-in navbar p-0 justify-content-between">
+  <nav class="signed-in navbar sticky-top p-0 justify-content-between">
     <div>
       <h3>What's on your bucket list?</h3>
     </div>
@@ -32,7 +32,11 @@
   <!-- Signed in body -->
 
   <div class="signed-in">
-    <div id="bucket-list"></div>
+    <div class="container col ml-4 scrollbar ">
+      <div class="row">
+        <div id="bucket-list" class="col-8"></div>
+      </div>
+    </div>
   </div>
 
   <!-- end signed in body-->

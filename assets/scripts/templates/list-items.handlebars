@@ -1,28 +1,45 @@
-<button data-toggle="modal" data-target="#create-item-modal" id='show-create-modal'>+</button>
+
+
+<div id="message " class = "row">
+  <div class = "  empty col-10 mr-0"></div>
+  <div class = "empty col-2">
+<button  data-toggle="modal" data-target="#create-item-modal" id='show-create-modal'>+</button>
+</div>
+</div>
 
 {{#each lists as |list|}}
-{{!-- {{log list}} --}}
 <section data-id={{list._id}}>
-  {{#if list.completed}}
-  {{!-- what it looks like completed --}}
-  <p class="completed"> Element
-    {{!-- we need to make the checkbox start checked or unchecked baseed on the elements state --}}
-    <input class="checkbox" data-id={{list._id}} type="checkbox" checked>
-    <h4 class="completed"> {{list.title}} </h4>
-    <h6 class="completed"> {{list.description}} </h6>
-  </p>
 
-  {{else}}
-  <p> Element
-    {{!-- we need to make the checkbox start checked or unchecked based on the elements state --}}
-    <input class="checkbox" data-id={{list._id}} type="checkbox">
-    <h4> {{list.title}} </h4>
-    <h6> {{list.description}} </h6>
-  </p>
+  {{#if list.completed}}
   {{!-- completed state --}}
+  <div class="completed row"> 
+    <input class="checkbox col-1" data-id={{list._id}} type="checkbox" checked>
+    <span class="completed col-7"> {{list.title}} </span>
+    <button class="update-item-button list-button btn col-2" data-toggle="modal" data-target="#update-item-modal" data-id={{list._id}} >Update
+    </button>
+<button class = "list-button btn delete-item-button col-2" data-id={{list._id}}>Delete</button>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <span class="completed col-11"> {{list.description}} </span>
+</div>
+ {{!-- end completed state --}}
+  {{else}}
+  <div class = "row">
+  <input class="checkbox col-1" data-id={{list._id}} type="checkbox" >
+    <span class="col-7"> {{list.title}} </span>
+    <button class = "update-item-button list-button btn col-2" data-toggle="modal" data-target="#update-item-modal" data-id={{list._id}}>Update</button>
+    <button class = "list-button btn delete-item-button col-2" data-id={{list._id}}>Delete</button>
+    </div>
+    
+    <div class="row">
+  <div class="col-1"></div>
+  <span class="col-11"> {{list.description}} </span>
+</div>
+
+ 
   {{/if}}
 </section>
-<button data-toggle="modal" data-target="#update-item-modal" data-id={{list._id}}
-  class="update-item-button">Update</button>
-<button data-id={{list._id}} class="delete-item-button">Delete</button>
+
 {{/each}}
+

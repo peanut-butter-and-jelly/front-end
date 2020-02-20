@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
+
 body {
   background-image: url('../../public/bucket-list.jpeg');
   background-repeat: no-repeat;
@@ -10,14 +12,30 @@ body {
   text-decoration: line-through;
 }
 
+#bucket-list {
+  background-color: $red;
+  border-radius: 30px;
+  max-height: 700px;
+  opacity: 65%;
+  overflow: scroll;
 
-// nav {
+  #show-create-modal {
+    background-color: transparent;
+    border: none;
+    color: lighten($red, 50%);
+    float: right;
+    font-size: 4vw;
+     
+  }
+ 
+  #show-create-modal:hover {
+    color:white;
+ }
+  
 
-//   h3 {
-//     float: left;
-//   }
+}
 
-//   .change-pw, .sign-out {
-//     float: right;
-//   }
-// }
+.empty {
+  min-height: 40px;
+}
+
