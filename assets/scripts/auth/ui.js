@@ -12,20 +12,20 @@ const signInSuccessful = function (response) {
 
 // shows toast for error handling
 const signInFailed = function () {
-  const header = "Error!"
-  const msg = "Email was invalid or password was incorrect"
+  const header = 'Error!'
+  const msg = 'Email was invalid or password was incorrect'
   showToast(msg, header)
 }
 
 // notifies user that their credentials were used to sign in
 const signUpSuccessful = function () {
-  const msg = "Successfully created an account and signed in"
-  showToast(msg, "Success!")
+  const msg = 'Successfully created an account and signed in'
+  showToast(msg, 'Success!')
 }
 
 // shows toast for error handling
 const signUpFailed = function (error) {
-  const header = "Error!"
+  const header = 'Error!'
   showToast(error.responseJSON.message, header)
 }
 
@@ -38,25 +38,24 @@ const signOutSuccessful = function () {
 
 // shows toast for error handling
 const signOutFailed = function () {
-  const header = "Error!"
+  const header = 'Error!'
   const msg = 'Failed to sign out, please try again'
   showToast(msg, header)
 }
 
 // shows toast for error handling
 const changePasswordFailed = function () {
-  const header = "Error!"
+  const header = 'Error!'
   const msg = 'Failed to change password, make sure they both match'
   showToast(msg, header)
 }
 
 // inform user of successful password change
 const changePasswordSuccessful = function () {
-  const msg = "Successfully changed password"
-  const header = "Success!"
+  const msg = 'Successfully changed password'
+  const header = 'Success!'
   showToast(msg, header)
 }
-
 
 module.exports = {
   signInSuccessful,

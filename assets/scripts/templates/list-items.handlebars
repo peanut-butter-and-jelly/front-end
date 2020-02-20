@@ -1,3 +1,5 @@
+<button data-toggle="modal" data-target="#create-item-modal" id='show-create-modal'>+</button>
+
 {{#each lists as |list|}}
 {{!-- {{log list}} --}}
 <section data-id={{list._id}}>
@@ -12,7 +14,7 @@
 
   {{else}}
   <p> Element
-    {{!-- we need to make the checkbox start checked or unchecked baseed on the elements state --}}
+    {{!-- we need to make the checkbox start checked or unchecked based on the elements state --}}
     <input class="checkbox" data-id={{list._id}} type="checkbox">
     <h4> {{list.title}} </h4>
     <h6> {{list.description}} </h6>

@@ -37,6 +37,7 @@ const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.changePassword(data)
+    .then(() => $('#change-password-modal').modal('toggle'))
     .then(ui.changePasswordSuccessful)
     .catch(ui.changePasswordFailed)
     .always(() => $('form').trigger('reset'))

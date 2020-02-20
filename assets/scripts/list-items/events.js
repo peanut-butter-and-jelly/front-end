@@ -1,8 +1,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-// needed because we use a modal which isn't tied to the handlebars generated 
-// elements to update 
+// needed because we use a modal which isn't tied to the handlebars generated
+// elements to update
 let tempId
 
 // create a new item and store it in db, if successful get the updated list
@@ -11,6 +11,7 @@ const onCreateListItem = (event) => {
   const form = event.target
   const data = getFormFields(form)
   api.createListItem(data)
+    .then(() => $('#create-item-modal').modal('toggle'))
     .then(onGetList)
     .catch(ui.createListItemFailed)
 }
@@ -69,8 +70,11 @@ const addEventHandlers = () => {
   // get the ID of the list item and store it for use with onUpdateListItem
   $('#bucket-list').on('click', '.update-item-button', onGetItemId)
   $('#bucket-list').on('click', '.checkbox', onToggleCompleted)
+
   // when modal is closed, clear the form
-  $('#update-item-modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
+  // $('#update-item-modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
+
+  $('.modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
 }
 
 module.exports = {
