@@ -1,1 +1,86 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
+
+body {
+  background-image: url('../../public/bucket-list.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: 'Quicksand', sans-serif;
+
+  h3 {
+    padding-left: 10px;
+  }
+
+}
+.completed{
+  text-decoration: line-through;
+}
+
+#bucket-list {
+  background-color: $red;
+  border-radius: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 35px;
+  max-height: 700px;
+  opacity: 65%;
+  color: rgba(255, 255, 255, 1);
+  overflow: scroll;
+
+  @media (max-width: 768px) {
+    max-height: 500px;
+    margin-top: 90px;
+    text-align: center;
+  }
+
+  #show-create-modal {
+    background-color: transparent;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 5vw;
+     
+  }
+
+  #show-create-modal:hover {
+    color: $bright-blue;
+ }
+
+  .element{
+    border-top: 1px solid white;
+    padding: 20px;
+
+  }
+
+ .title {
+   font-size: 25px;
+ }
+
+ .description {
+   font-size: 18px;
+   margin-left: 20px;
+   margin-top: 10px;
+ }
+
+ .list-button {
+   background-color: $bright-blue;
+   border-radius: 30px;
+ }
+
+ .checkbox {
+   margin-right: 10px;
+ }
+
+}
+
+.empty {
+  min-height: 40px;
+}
+
+nav {
+  height: 70px;
+  padding: 20px;
+  padding-bottom: 70px;
+}
+
