@@ -7,7 +7,9 @@ const signInSuccessful = function (response) {
   store.user = response.user
   $('.signed-out').hide()
   $('.signed-in').show()
+  $('#message').text()
   listEvents.onGetList()
+
 }
 
 // shows toast for error handling
