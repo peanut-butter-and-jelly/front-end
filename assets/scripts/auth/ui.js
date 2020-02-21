@@ -47,9 +47,8 @@ const signOutFailed = function () {
 
 // shows toast for error handling
 const changePasswordFailed = function () {
-  const header = 'Error!'
-  const msg = 'Failed to change password, make sure they both match'
-  showToast(msg, header)
+  const msg = 'Failed to change password, please enter your current password in old password field'
+  $('#change-password-feedback').text(msg)
 }
 
 // inform user of successful password change
