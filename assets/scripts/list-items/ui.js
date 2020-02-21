@@ -13,7 +13,7 @@ const getListSuccessful = function (response) {
   const listHTML = listItemsTemplate({ lists: response.lists })
   $('#bucket-list').html(listHTML)
   if (response.lists.length === 0) {
-    $('#message').text('Welcome, please make your bucket list!')
+    $('#message').text('Welcome, please click the plus to begin making your bucket list!')
   } else {
     $('#message').text('Bucket List')
   }
@@ -40,6 +40,7 @@ const deleteListItemFailed = function () {
   showToast(msg, header)
 }
 
+// gets a specific item when update is clicked to populate the update modal
 const onGetItemIdSuccessful = (data) => {
   const title = data.list.title
   const description = data.list.description
