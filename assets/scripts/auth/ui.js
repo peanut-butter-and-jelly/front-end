@@ -7,7 +7,6 @@ const signInSuccessful = function (response) {
   store.user = response.user
   $('.signed-out').hide()
   $('.signed-in').show()
-  $('#message').text()
   listEvents.onGetList()
 
 }
@@ -20,9 +19,13 @@ const signInFailed = function () {
 }
 
 // notifies user that their credentials were used to sign in
-const signUpSuccessful = function () {
+const signUpSuccessful = function (response) {
+  store.user = response.user
   const msg = 'Successfully created an account and signed in'
   showToast(msg, 'Success!')
+  $('.signed-out').hide()
+  $('.signed-in').show()
+  listEvents.onGetList()
 }
 
 // shows toast for error handling

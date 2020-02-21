@@ -10,10 +10,11 @@ const createListItemFailed = function () {
 
 // use handlebars template to show all list items
 const getListSuccessful = function (response) {
+  console.log(response)
   const listHTML = listItemsTemplate({ lists: response.lists })
   $('#bucket-list').html(listHTML)
   if (response.lists.length === 0) {
-    $('#message').text('Welcome, please make your bucket list!')
+    $('#message').text('Welcome, please click the plus to begin making your bucket list!')
   } else {
     $('#message').text('Bucket List')
   }

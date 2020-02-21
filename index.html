@@ -22,7 +22,8 @@
     </div>
 
     <div>
-      <button class="btn btn-light btn-sm" id="password-modal-button" data-toggle="modal" data-target="#change-password-modal">Change
+      <button class="btn btn-light btn-sm" id="password-modal-button" data-toggle="modal"
+        data-target="#change-password-modal">Change
         Password</button>
       <button id="sign-out" class="btn btn-light btn-sm">Sign Out</button>
     </div>
@@ -46,28 +47,32 @@
   <div class="signed-out">
     <h1 class="text-center text-md-left ml-md-2">What's on your bucket list?</h1>
     <div class="container ml-md-2">
-    <div class="row text-center text-md-left">
-    <form class="input-group" id="sign-up">
-      <fieldset>
-        <input class="credentials col-8 col-md-3" name="credentials[email]" type="email" placeholder="email" required>
-        <input class="credentials col-8 col-md-3" name="credentials[password]" type="password" placeholder="password" required>
-        <input class="credentials col-8 col-md-3" name="credentials[password_confirmation]" type="password"
-          placeholder="confirm password" required>
-        <input type="submit" class="btn btn-light btn-sm col-4 col-md-2" value="Sign Up">
-      </fieldset>
-    </form>
+      <div class="row text-center text-md-left">
+        <form class="input-group" id="sign-up">
+          <fieldset>
+            <input class=" min-width credentials col-8 col-md-3" name="credentials[email]" type="email"
+              placeholder="email" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password]" type="password"
+              placeholder="password" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password_confirmation]"
+              type="password" placeholder="confirm password" required>
+            <input type="submit" class="margin-bottom btn btn-light btn-sm col-5 col-md-2" value="Sign Up">
+          </fieldset>
+        </form>
+      </div>
+      <div class="row text-center text-md-left">
+        <form class=" input-group" id="sign-in">
+          <fieldset>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[email]" type="email"
+              placeholder="email" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password]" type="password"
+              placeholder="password" required>
+            <input type="submit" class="btn btn-light btn-sm col-5 col-md-2" value="Sign In">
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="row text-center text-md-left">
-    <form class="input-group" id="sign-in">
-      <fieldset>
-        <input class="credentials col-8 col-md-3" name="credentials[email]" type="email" placeholder="email" required>
-        <input class="credentials col-8 col-md-3" name="credentials[password]" type="password" placeholder="password" required>
-        <input type="submit" class="btn btn-light btn-sm col-4 col-md-2" value="Sign In">
-      </fieldset>
-    </form>
-  </div>
-  </div>
-</div>
   <!-- end signed-out  -->
 
   <!-- create-item modal -->
@@ -81,11 +86,11 @@
           </button>
         </div>
         <div>
-          <form class="input-group" id="create-list">
+          <form class="input-group m-3" id="create-list">
             <fieldset>
               <input name="list[title]" type="text" placeholder="Skydiving..." required>
               <input name="list[description]" type="text" placeholder="I want to fly!" required>
-              <button type="submit" class="btn btn-sm btn-outline-secondary" >Add Item </button>
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Add Item </button>
             </fieldset>
           </form>
         </div>
@@ -105,10 +110,11 @@
           </button>
         </div>
         <div>
-          <form class="col-12 mb-2 " id="update-item-form">
+          <form class="col-12 m-3 input-group" id="update-item-form">
             <fieldset>
               <input name="list[title]" id="update-title" type="text" placeholder="new title" required>
-              <input name="list[description]" id="update-description" type="text" placeholder="new description" required>
+              <input name="list[description]" id="update-description" type="text" placeholder="new description"
+                required>
               <input class="btn btn-outline-secondary btn-sm" type="submit" id="update-item-btn" value="Update Item">
             </fieldset>
           </form>
@@ -119,7 +125,7 @@
   <!-- end update list item modal -->
 
   <!-- begin notification /toast-->
-  <div class="toast" style="position: fixed; top: 0; right: 0;z-index: 1; " data-delay='3750' role="alert"
+  <div class="toast" style="position: fixed; top: 10px; right: 10px;z-index: 1500; " data-delay='3750' role="alert"
     aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <strong class="mr-auto">
