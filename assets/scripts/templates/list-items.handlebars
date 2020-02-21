@@ -12,17 +12,21 @@
   {{!-- completed state --}}
   <div class="element">
     <div class="row">
-  <div class="row"> 
-    <div class="row">
+
       <div class="col-12 col-md-8">
         <input class="checkbox align-middle" data-id={{list._id}} type="checkbox" checked>
         <span class="title completed align-middle"> {{list.title}} </span>
       </div>
+
       <button class="update-item-button list-button btn btn-xs col-6 col-md-2" data-toggle="modal"
         data-target="#update-item-modal" data-id={{list._id}}>Update
       </button>
+
       <button class="pl-1 list-button btn btn-xs delete-item-button col-6 col-md-2" data-id={{list._id}}>Delete</button>
+
     </div>
+
+
     <div class="row">
       <span class="description col-12"> {{list.description}} </span>
     </div>
@@ -31,13 +35,17 @@
   {{else}}
   <div class="element">
     <div class="row">
+
       <div class="col-12 col-md-8">
         <input class="checkbox align-middle" data-id={{list._id}} type="checkbox">
         <span class="title align-middle"> {{list.title}} </span>
       </div>
+
       <button class="update-item-button list-button btn btn-xs col-6 col-md-2" data-toggle="modal"
         data-target="#update-item-modal" data-id={{list._id}}>Update</button>
+
       <button class="pl-1 list-button btn btn-xs delete-item-button col-6 col-md-2" data-id={{list._id}}>Delete</button>
+      
     </div>
 
     <div class="row">
