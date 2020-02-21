@@ -41,6 +41,7 @@ const deleteListItemFailed = function () {
   showToast(msg, header)
 }
 
+// gets a specific item when update is clicked to populate the update modal
 const onGetItemIdSuccessful = (data) => {
   const title = data.list.title
   const description = data.list.description
