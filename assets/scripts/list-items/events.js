@@ -74,10 +74,6 @@ const addEventHandlers = () => {
   // get the ID of the list item and store it for use with onUpdateListItem
   $('#bucket-list').on('click', '.update-item-button', onGetItemId)
   $('#bucket-list').on('click', '.checkbox', onToggleCompleted)
-
-  // when modal is closed, clear the form
-  // $('#update-item-modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
-
   $('.modal').on('hidden.bs.modal', () => $('form').trigger('reset'))
 }
 

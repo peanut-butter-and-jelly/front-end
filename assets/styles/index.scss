@@ -84,3 +84,15 @@ nav {
   padding-bottom: 70px;
 }
 
+.min-width{
+  @media (max-width: 768px) {
+    width:60vw;
+    margin-bottom: 5px;
+  }
+}
+
+.margin-bottom {
+  @media (max-width: 768px) {
+    margin-bottom: 5px;
+  }
+}
