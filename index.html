@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bucket List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- Signed in nav-->
+  <nav class="signed-in navbar sticky-top justify-content-between">
+    <div>
+      <h2>What's on your bucket list?</h2>
+    </div>
+
+    <div>
+      <button class="btn btn-light btn-sm" id="password-modal-button" data-toggle="modal"
+        data-target="#change-password-modal">Change
+        Password</button>
+      <button id="sign-out" class="btn btn-light btn-sm">Sign Out</button>
+    </div>
+  </nav>
+  <!-- end signed in nav-->
+
+  <!-- Signed in body -->
+
+  <div class="signed-in">
+    <div class="container col ml-4 scrollbar ">
+      <div class="row">
+        <div id="bucket-list" class="col-11 col-md-8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end signed in body-->
+
+
+  <!-- Signed out -->
+  <div class="signed-out">
+    <h1 class="text-center text-md-left ml-md-2">What's on your bucket list?</h1>
+    <div class="container ml-md-2">
+      <div class="row text-center text-md-left">
+        <form class="input-group" id="sign-up">
+          <fieldset>
+            <input class=" min-width credentials col-8 col-md-3" name="credentials[email]" type="email"
+              placeholder="email" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password]" type="password"
+              placeholder="password" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password_confirmation]"
+              type="password" placeholder="confirm password" required>
+            <input type="submit" class="margin-bottom btn btn-light btn-sm col-5 col-md-2" value="Sign Up">
+          </fieldset>
+        </form>
+      </div>
+      <div class="row text-center text-md-left">
+        <form class=" input-group" id="sign-in">
+          <fieldset>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[email]" type="email"
+              placeholder="email" required>
+            <input class="min-width credentials col-8 col-md-3" name="credentials[password]" type="password"
+              placeholder="password" required>
+            <input type="submit" class="btn btn-light btn-sm col-5 col-md-2" value="Sign In">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end signed-out  -->
+
+  <!-- create-item modal -->
+  <div class="modal fade" id="create-item-modal" tabindex="-1">
+    <div class="modal-dialog" role="dialog" aria-labelledby="create-item-modal" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="title">Create an item</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div>
+          <form class="input-group m-3" id="create-list">
+            <fieldset>
+              <input name="list[title]" type="text" placeholder="Skydiving..." required>
+              <input name="list[description]" type="text" placeholder="I want to fly!" required>
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Add Item </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end create-item modal -->
+
+  <!-- Update list-item modal -->
+  <div class="modal fade" id="update-item-modal" tabindex="-1">
+    <div class="modal-dialog" role="dialog" aria-labelledby="update-item-modal" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="title">Update Item</h4>
+          <button type="button" class="close " data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div>
+          <form class="col-12 m-3 input-group" id="update-item-form">
+            <fieldset>
+              <input name="list[title]" id="update-title" type="text" placeholder="new title" required>
+              <input name="list[description]" id="update-description" type="text" placeholder="new description"
+                required>
+              <input class="btn btn-outline-secondary btn-sm" type="submit" id="update-item-btn" value="Update Item">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end update list item modal -->
+
+  <!-- begin notification /toast-->
+  <div class="toast" style="position: fixed; top: 10px; right: 10px;z-index: 1500; " data-delay='3750' role="alert"
+    aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="mr-auto">
+        <!-- use js to insert text -->
+      </strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      <!-- use js to insert text -->
+    </div>
+  </div>
+  <!-- end toast -->
+
+  <!-- update pw modal -->
+  <div class="modal fade" id="change-password-modal" tabindex="-1">
+    <div class="modal-dialog" role="dialog" aria-labelledby="delete-list-modal" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="title" id="change-password-modal-label">Change Password</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="input-group m-3 " id="change-pw">
+            <fieldset>
+              <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
+              <input class="credentials" name="passwords[new]" type="text" placeholder="new password" required>
+              <input type="submit" class="btn btn-outline-secondary btn-sm mr-4" value="Submit">
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p id="change-password-feedback" class="text-danger text-align-left"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end update pw modal -->
+
+</body>
+
+</html>
