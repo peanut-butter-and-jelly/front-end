@@ -48,6 +48,7 @@ const addEventHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-pw').on('submit', onChangePassword)
+  $('#change-password-modal').on('hidden.bs.modal', () => $('#change-password-feedback').empty())
 }
 
 module.exports = {

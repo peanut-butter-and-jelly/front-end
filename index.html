@@ -145,8 +145,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-
-        <div>
+        <div class="modal-body">
           <form class="input-group m-3 " id="change-pw">
             <fieldset>
               <input class="credentials" name="passwords[old]" type="text" placeholder="old password" required>
@@ -154,6 +153,9 @@
               <input type="submit" class="btn btn-outline-secondary btn-sm mr-4" value="Submit">
             </fieldset>
           </form>
+        </div>
+        <div class="modal-footer">
+          <p id="change-password-feedback" class="text-danger text-align-left"></p>
         </div>
       </div>
     </div>
